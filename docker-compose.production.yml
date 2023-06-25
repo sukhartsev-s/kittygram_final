@@ -20,8 +20,6 @@ services:
     volumes:
       - static:/static/
       - media:/app/media/
-    depends_on:
-      - db
 
   frontend:
     container_name: kittygram_frontend
@@ -29,14 +27,14 @@ services:
     env_file: .env
     command: cp -r /app/build/. /static/
     volumes:
-      - static:/static
+      - static:/static/
 
   gateway:
     container_name: kittygram_gateway
     image: suhartsev/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/static
+      - static:/static/
       - media:/app/media/
     ports:
       - 9000:80
