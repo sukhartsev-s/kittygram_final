@@ -18,8 +18,8 @@ services:
     image: suhartsev/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static
-      - media:/app/media
+      - static:/static/
+      - media:/app/media/
     depends_on:
       - db
 
@@ -36,9 +36,7 @@ services:
     image: suhartsev/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/static/
-      - media:/media
+      - static:/static
+      - media:/app/media/
     ports:
       - 9000:80
-    depends_on:
-      - backend
