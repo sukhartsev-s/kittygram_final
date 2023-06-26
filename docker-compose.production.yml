@@ -7,7 +7,7 @@ volumes:
 
 services:
   db:
-    container_name: db
+    container_name: kittygram_db
     image: postgres:13
     env_file: .env
     volumes:
