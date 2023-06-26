@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:13.11
+        image: postgres:13.10
         env:
           POSTGRES_USER: django_user
           POSTGRES_PASSWORD: django_password
@@ -139,12 +139,12 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           source: "docker-compose.production.yml"
-          target: "kitty"
+          target: "kittygram"
       - name: Executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         env:
           DOCKER_LOGIN: ${{ secrets.DOCKER_USERNAME }}
-          NGINX_PORT: 9000
+          NGINX_PORT: ${{ NGINX_PORT }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
