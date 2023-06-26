@@ -7,14 +7,14 @@ volumes:
 
 services:
   db:
-    env_file: .env
     image: postgres:13.10
+    env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    env_file: .env
     build: ./backend/
+    env_file: .env
     volumes:
       - static:/backend_static
       - media:/app/media
@@ -27,10 +27,10 @@ services:
       - static:/frontend_static
 
   gateway:
-    env_file: .env
     build: ./nginx/
+    env_file: .env
     volumes:
       - static:/staticfiles
-      - media:/app/media/
+      - media:/media
     ports:
       - 9000:80
