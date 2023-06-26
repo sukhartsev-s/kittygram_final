@@ -36,7 +36,7 @@ services:
     image: suhartsev/kittygram_gateway
     volumes:
       - static:/static
-      - media:/media
+      - media:/app/media/
     ports:
       - 9000:80
     depends_on:
