@@ -139,4 +139,4 @@
  
 ### Автор 
  
-- Сухарцев Сергей - [GitHub](https://github.com/suhartcev)
+- Сухарцев Сергей - [GitHub](https://github.com/sukhartsev-s)
