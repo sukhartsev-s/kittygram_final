@@ -33,6 +33,6 @@ services:
       - static:/static
       - media:/media
     ports:
-      - 9000:80
+      - ${NGINX_PORT}:${HOST_PORT}
     depends_on:
       - db

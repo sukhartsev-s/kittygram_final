@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3'
 
 volumes:
@@ -34,4 +33,4 @@ services:
       - static:/staticfiles
       - media:/media
     ports:
-      - 9000:80
+      - ${NGINX_PORT}:${HOST_PORT}
