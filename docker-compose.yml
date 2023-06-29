@@ -31,6 +31,6 @@ services:
     env_file: .env
     volumes:
       - static:/staticfiles
-      - media:/media
+      - media:/app/media
     ports:
       - ${NGINX_PORT}:${HOST_PORT}
