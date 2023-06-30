@@ -35,4 +35,4 @@ services:
       - static:/static
       - media:/app/media
     ports:
-      - 9000:80
+      - ${NGINX_PORT}:${HOST_PORT}
