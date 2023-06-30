@@ -1,4 +1,5 @@
 version: '3'
+
 volumes:
   pg_data:
   static:
@@ -34,6 +35,6 @@ services:
       - static:/static
       - media:/app/media/
     ports:
-      - 9000:80
+      - ${NGINX_PORT}:${HOST_PORT} 
     depends_on:
       - db
