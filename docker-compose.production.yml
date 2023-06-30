@@ -36,3 +36,5 @@ services:
       - media:/app/media
     ports:
       - ${NGINX_PORT}:${HOST_PORT}
+    depends_on:
+      - db
